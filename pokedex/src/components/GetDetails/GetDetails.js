@@ -1,15 +1,39 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { MainGrid, DivPhoto, DivStat, DivTypeMoves, FrontContainer, BackContainer, Type, DivMoves, H1Stats, Stats, Moves } from './styled'
+import { GlobalStateContext } from "../../global/GlobalStateContext";
+import axios from 'axios';
 
-export default function GetDetails() {
+
+export default function GetDetails(props) {
+    const { pokemons, setPokemons, pokedex, setPokedex } = useContext(GlobalStateContext);
+    const [pokeDetails, setPokedetails] = useState([]);
+
+    const getDetails = () =>{
+        axios
+            .get(`https://pokeapi.co/api/v2/pokemon/bulbasaur`)
+            .then((response) => {
+                setPokedetails(response.data);
+                console.log((response.data));
+
+            })
+            .catch((error) => console.log(error.message));
+    };
+
+    useEffect(() =>{
+        getDetails()
+    }, [])
+    
+
     return (
         <MainGrid>
+            { pokeDetails && pokeDetails.sprites && (
+                <>
             <DivPhoto>
                 <FrontContainer>
-                    <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png' />
+                    <img src= {pokeDetails.sprites.front_default} />
                 </FrontContainer>
                 <BackContainer>
-                    <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png' />
+                     <img src={pokeDetails.sprites.back_default} />
                 </BackContainer>
             </DivPhoto>
             <DivStat>
@@ -32,13 +56,14 @@ export default function GetDetails() {
                 <DivMoves>
                     <h1>Moves</h1>
                     <Moves>
-                        <p>teste</p>
-                        <p>teste</p>
-                        <p>teste</p>
-                        <p>teste</p>
+                        {pokeDetails && pokeDetails.moves.map((poke, index) =>{
+        return index < 5 && <p key={poke.move.name}>{poke.move.name}</p>
+    })}
                     </Moves>
                 </DivMoves>
             </DivTypeMoves>
+            </>
+            )}
         </MainGrid>
     )
 }

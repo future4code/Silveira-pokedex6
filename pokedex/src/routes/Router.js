@@ -12,7 +12,7 @@ export const Router = () => {
             <Routes>
                 <Route index element={<HomePage />} />
                 <Route path="pokedex" element={<PokedexPage/>} />
-                <Route path="pokemonsDetails/:name/:telaPokedex?" element={<PokemonsDetails/>} />
+                <Route path="pokemonsDetails" element={<PokemonsDetails/>} />
             </Routes>
         </BrowserRouter>
 
