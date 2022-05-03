@@ -1,27 +1,21 @@
 import { HeaderPokedex, ButtonBack, ContainerCards, Container } from "./styled"
 import PokeCard from "../../components/PokeCard/PokeCard"
+import { goBack } from "../../routes/coordinator";
+import { useNavigate } from "react-router-dom";
 
 const PokedexPage = () => {
+  const navigate = useNavigate()
   return (
-    <div>
+    <>
       <HeaderPokedex>
 
-        <ButtonBack>Voltar para lista de pokemons</ButtonBack>
+        <ButtonBack onClick={() => goBack(navigate)} >Voltar para lista de pokemons</ButtonBack>
         <h2>Pokedex</h2>
       </HeaderPokedex>
       <ContainerCards>
         <PokeCard />
-        <PokeCard />
-        <PokeCard />
-        <PokeCard />
-        <PokeCard />
-        <PokeCard />
-        <PokeCard />
-        <PokeCard />
-        <PokeCard />
-
       </ContainerCards>
-    </div>
+    </>
   );
 }
 

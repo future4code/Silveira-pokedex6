@@ -16,7 +16,7 @@ border-radius: 8px;
 ` 
 
 export const DivImage = styled.img`
-    width: 16em;
+    width: 10em;
     height: 10em;
     padding: 0.5em;
     background-color: white;    
