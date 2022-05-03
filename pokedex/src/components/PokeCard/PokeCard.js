@@ -1,27 +1,34 @@
 import { CardContainer, DivImage } from "./styled"
 import { useNavigate } from "react-router-dom";
-import {goToPokemonsDetails} from '../../routes/coordinator'
+import React, { useContext } from "react";
+import { goToPokemonsDetails } from '../../routes/coordinator'
+import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 
 const PokeCard = (props) => {
+    const { pokemons, setPokemons, pokedex, setPokedex } = useContext(GlobalStateContext);
     const navigate = useNavigate()
+     
+
+
     return (
-        <div>
-            <CardContainer>
-                <DivImage
-                    src={props.poke && props.poke.sprites.front_default}
-                    alt={props.poke.name}
-                />
-                <p>{props.poke.name}</p>
-                {/* <p>{poke.stats}</p> */}
-                <div>
-                    <button>Remover da Pokedex</button>
-                    <button onClick={()=> goToPokemonsDetails(navigate, props.poke.name)}>Ver Detalhes</button>
-                </div>
-            </CardContainer>
-         
-         
-        </div>
+        <>
+            {pokemons && pokemons.map((poke,index) => {
+                return (
+                    <CardContainer key={index} >
+                        <DivImage
+                            src={poke && poke.sprites.front_default}
+                            alt={poke.name}
+                        />
+                        <p>{poke.name}</p>
+                        <div>
+                            <button>Remover da Pokedex</button>
+                            <button onClick={() => goToPokemonsDetails(navigate, poke.name)}>Ver Detalhes</button>
+                        </div>
+                    </CardContainer>
+                )
+            })}
+        </>
     );
 }
 

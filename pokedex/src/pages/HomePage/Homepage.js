@@ -6,11 +6,12 @@ import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 
 const HomePage = () => {
-  // const {} = useState([])
+  
   const { pokemons } = useContext(GlobalStateContext);
   // const navigate = useNavigate()
-
+ 
   const pokeMap = pokemons && pokemons.map((poke) =>{
+    console.log(poke)
     return (
       <div>
         <PokeCard key={poke.id} poke={poke}/>
