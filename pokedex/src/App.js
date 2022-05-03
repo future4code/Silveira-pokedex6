@@ -1,12 +1,13 @@
-import {useState,useEffect} from "react";
+import GlobalState from "./global/GlobalState";
+import { GlobalStyle } from "./pages/PokemonsDetails/styled";
 import { Router } from "./routes/Router";
 
 const  App = () => {
   return (
-    <div>
-      
+    <GlobalState>
+      <GlobalStyle />
      <Router/>
-    </div>
+    </GlobalState>
   );
 }
 
