@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import GetDetails from '../../components/GetDetails/GetDetails'
 import { goBack } from '../../routes/coordinator'
-import { Body, GlobalStyle, HeaderDIV } from './styled'
+import { Body, GlobalStyle, ButtonHeader } from './styled'
 
 
 
@@ -12,9 +12,9 @@ export default function PokemonsDetails() {
     <Body>
       <GlobalStyle />
       <header>
-          <button onClick={() => goBack(navigate)}>Voltar</button>
+          <ButtonHeader onClick={() => goBack(navigate)}>Voltar</ButtonHeader>
           <p>Nome do Pokemon</p>
-          <button>Adicionar/Remover da Podedex</button>
+          <ButtonHeader>Adicionar/Remover da Podedex</ButtonHeader>
       </header>
       <main>
         <div>

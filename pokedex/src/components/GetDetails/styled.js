@@ -26,7 +26,12 @@ img{
     object-fit: fill;
     height: 10rem;
     width: 10rem;
-
+    :hover{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        transition:all 0.3s ease;
+    }
     }
 `
 export const BackContainer = styled.div`
@@ -40,7 +45,12 @@ img{
     object-fit: fill;
     height: 10rem;
     width: 10rem;
-
+    :hover{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        transition:all 0.3s ease;
+    }
     }
 `
 
@@ -64,8 +74,15 @@ margin-top: 5rem;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+:hover{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        transition:all 0.3s ease;
+    }
 p{
     margin: 5px;
+    
 }
 ` 
 export const DivTypeMoves = styled.div`
@@ -83,6 +100,14 @@ display: flex;
 justify-content: space-around;
 box-shadow: 5px 5px 5px 5px gray;
 align-items: center;
+p{
+    :hover{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        transition:all 0.3s ease;
+    }
+}
 `
 export const DivMoves = styled.div`
 border: 1px solid black;
@@ -102,6 +127,12 @@ margin-top: 3rem;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+:hover{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        transition:all 0.3s ease;
+    }
 p{
     margin: 5px;
 }
