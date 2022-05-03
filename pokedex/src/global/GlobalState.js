@@ -5,9 +5,9 @@ import axios from "axios";
 
 export default function GlobalState(props) { //não entendi a props
     const [pokemonList, setPokemonList] = useState([]);//estado para a lista de pokemons
-    const [pokemons, setPokemons] = useState([]);//estado para a lista de pokemons depois de adicionar à pokedex
+    const [pokemons, setPokemons] = useState([]);//estado para a lista de pokemons depois de adicionar à pokedex?
     const [pokedex, setPokedex] = useState([]);//estado para a pokedex
-
+    const [pokemonID, setPokemonID] = useState("")//importante para envio da id entre componentes sem ligação direta, como PokeCard e GetDetails
 
     const getPokemonList = () => {//pegar a lista de pokemons da API
         axios
@@ -24,7 +24,7 @@ export default function GlobalState(props) { //não entendi a props
     }, []);
 
     useEffect(() => {
-        const newList = [];// colocar os pokemons em ordem depois de adicionar à pokedex
+        const newList = [];// colocar os pokemons em ordem depois de adicionar à pokedex?
         pokemonList.forEach((item) => {
             axios
                 .get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
@@ -43,11 +43,13 @@ export default function GlobalState(props) { //não entendi a props
 
     
 
-    const data = { //Não entendi bem... acho que é 
+    const data = { //informações que serão enviada para os componentes filhos 
         pokemons,
         setPokemons,
         pokedex,
-        setPokedex
+        setPokedex,
+        pokemonID,
+        setPokemonID
     };
 
     return (

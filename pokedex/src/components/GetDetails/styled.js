@@ -1,5 +1,25 @@
 import styled from 'styled-components'
 
+export const ButtonHeader = styled.button`
+margin: 10px;
+border-style: hidden;
+height: 30px;
+background-color: black;
+color: blue;
+border-radius: 5px;
+padding: 4px;
+cursor: pointer;
+:hover{
+    color: darkgreen;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition:all 0.3s ease;
+}
+:active{
+    color:blue;
+}
+`
 export const MainGrid = styled.div`
 display: grid;
 grid-template-columns: 25rem 25rem 1fr;
@@ -74,15 +94,15 @@ margin-top: 5rem;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-:hover{
+
+p{
+    margin: 5px;
+    :hover{
         -webkit-transform: scale(1.3);
         -ms-transform: scale(1.3);
         transform: scale(1.3);
-        transition:all 0.3s ease;
+        transition:all 0.09s ease;
     }
-p{
-    margin: 5px;
-    
 }
 ` 
 export const DivTypeMoves = styled.div`
@@ -105,7 +125,7 @@ p{
         -webkit-transform: scale(1.3);
         -ms-transform: scale(1.3);
         transform: scale(1.3);
-        transition:all 0.3s ease;
+        transition:all 0.09s ease;
     }
 }
 `
@@ -127,14 +147,15 @@ margin-top: 3rem;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-:hover{
+
+p{
+    margin: 5px;
+    :hover{
         -webkit-transform: scale(1.3);
         -ms-transform: scale(1.3);
         transform: scale(1.3);
-        transition:all 0.3s ease;
+        transition:all 0.09s ease;
     }
-p{
-    margin: 5px;
 }
 `
 
