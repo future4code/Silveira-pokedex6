@@ -25,24 +25,5 @@ main{
     flex-grow: 1;
 }
 `
-export const ButtonHeader = styled.button`
-margin: 10px;
-border-style: hidden;
-height: 30px;
-background-color: black;
-color: blue;
-border-radius: 5px;
-padding: 4px;
-cursor: pointer;
-:hover{
-    color: darkgreen;
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
-        transition:all 0.3s ease;
-}
-:active{
-    color:blue;
-}
-`
+
 

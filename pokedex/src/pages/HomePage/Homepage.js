@@ -11,7 +11,7 @@ const HomePage = () => {
   // const navigate = useNavigate()
  
   const pokeMap = pokemons && pokemons.map((poke) =>{
-    console.log(poke)
+    
     return (
       <div>
         <PokeCard key={poke.id} poke={poke}/>

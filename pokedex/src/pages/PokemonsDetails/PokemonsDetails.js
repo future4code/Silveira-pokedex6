@@ -13,11 +13,6 @@ export default function PokemonsDetails() {
   return (
     <Body>
       <GlobalStyle />
-      <header>
-          <ButtonHeader onClick={() => goBack(navigate)}>Voltar</ButtonHeader>
-          <p>Nome do Pokemon</p>
-          <ButtonHeader>Adicionar/Remover da Podedex</ButtonHeader>
-      </header>
       <main>
         <div>
           <GetDetails />
