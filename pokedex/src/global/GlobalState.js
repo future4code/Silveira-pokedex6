@@ -8,6 +8,17 @@ export default function GlobalState(props) { //não entendi a props
     const [pokemons, setPokemons] = useState([]);//estado para a lista de pokemons depois de adicionar à pokedex
     const [pokedex, setPokedex] = useState([]);//estado para a pokedex
 
+
+    const getPokemonList = () => {//pegar a lista de pokemons da API
+        axios
+            .get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`)
+            .then((response) => {
+                setPokemonList(response.data.results);
+            })
+            .catch((error) => console.log(error.message));
+    };
+
+
     useEffect(() => {
         getPokemonList();
     }, []);
@@ -30,14 +41,7 @@ export default function GlobalState(props) { //não entendi a props
         });
     }, [pokemonList]);//renderiza toda vez que 
 
-    const getPokemonList = () => {//pegar a lista de pokemons da API
-        axios
-            .get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`)
-            .then((response) => {
-                setPokemonList(response.data.results);
-            })
-            .catch((error) => console.log(error.message));
-    };
+    
 
     const data = { //Não entendi bem... acho que é 
         pokemons,
