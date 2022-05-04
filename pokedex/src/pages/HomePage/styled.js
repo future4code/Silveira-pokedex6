@@ -33,3 +33,10 @@ flex-direction: row;
 justify-content: space-around;
 margin-left: -1380px;
 `
+
+export const ContainerCards = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25em);
+    justify-content: center;
+    grid-gap: 1em;
+`
