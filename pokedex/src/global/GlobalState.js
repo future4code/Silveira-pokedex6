@@ -30,7 +30,7 @@ export default function GlobalState(props) { //não entendi a props
                 .get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
                 .then((response) => {
                     newList.push(response.data);
-                    if (newList.length === 20) {
+                    if (newList.length === 20) {//por que igual a 20?
                         const orderedList = newList.sort((a, b) => {
                             return a.id - b.id;
                         });
@@ -55,7 +55,7 @@ export default function GlobalState(props) { //não entendi a props
     return (
         <div>
             <GlobalStateContext.Provider value={data}>
-                {props.children} {/*valor genérico para o componente filho entrar*/}
+                {props.children} {/*valor genérico para o componente filho entrar, mas pq props?*/}
             </GlobalStateContext.Provider>
         </div>
     )
