@@ -1,67 +1,62 @@
 import { CardContainer, DivImage } from "./styled"
 import { useNavigate } from "react-router-dom";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { goToPokemonsDetails } from '../../routes/coordinator'
 import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 
 const PokeCard = (props) => {
-    const { pokemons, setPokemons, pokedex, setPokedex, pokemonID, setPokemonID } = useContext(GlobalStateContext);
-
+    const { pokemons, setPokemons, setPokemonID, pokedex, setPokedex } = useContext(GlobalStateContext);
+    const { poke, indexPoke } = props //estou recebendo as props passadas
     const navigate = useNavigate()
 
     const onClickDetails = (navigate, name, id) => {
         goToPokemonsDetails(navigate, name)
         setPokemonID(id)
     }
-
-    const addToCart = (item) => {
-        const index = pokedex.findIndex((i) => i.id === item.id);
-
-        const newPokemonsList = [...pokemons]
-        newPokemonsList.splice(item, 1);
-
-        const NewPodexList = [...pokedex,item];
-
-
-
-        // const NewPokedex = [...pokedex];
-       
-        // if (index === -1) {
-        //     NewPokedex.push(newPokemon);
-        //     NewHome.splice(newPokemon[index], 1);
-        // }
-        // // const orderedList = NewHome.sort((a,b) => {
-        // //     return a.id - b.id;
-        // // });
-
-        // const orderedListPokedex = NewPokedex.sort((a,b) => {
-        //     return a.id - b.id;
-        // });    
-
-
-        setPokemons(newPokemonsList)
-        setPokedex(NewPodexList)
+//na HomePage ativei aquele map para passar o index de cada pokemon como props via onClick
+    const addToPokedex = (pokeOfHome, indexPokeOfHome) => {
+        const newPokedexList = [...pokedex]//cópia da pokedex
+        const newPokemonsList = [...pokemons]//cópia dos pokemons da HomePage
+        const indexPoke = pokedex.findIndex((pokeOfPokedex) => {
+            return pokeOfPokedex.name === pokeOfHome.name;
+        });
+        if (indexPoke === -1) {//Se não existir o index procurado, faça:
+            newPokedexList.push({ ...pokeOfHome});//coloco na lista da pokedex exatamente o pokemon que vem quando clicka
+            newPokemonsList.splice(indexPokeOfHome, 1);//retiro da lista de pokemons exatamente o index que vem quando clicka
+        } else {
+            alert(`${pokeOfHome.name} já foi capturado!`)//se já existir, emite um alert não deixando adicionar o mesmo pokemon(usei antes de consegui excluir da homePage)
+        }
+        const orderedPokedex = newPokedexList.sort((a, b) => {
+            const ordem = a.id - b.id;//com essa sintaxe funcionou normal, a outra continuava a bugar. não sei pq kkkkk
+            return ordem
+        });
+        const orderedPokemons = newPokemonsList.sort((a, b) => {
+            const ordem = a.id - b.id;//com essa sintaxe funcionou normal, a outra continuava a bugar. não sei pq kkkkk
+            return ordem
+        });
+        setPokemons(orderedPokemons)//seta no estado da homePage os pokemons ordenados
+        setPokedex(orderedPokedex)//seta no estado da pokedex os pokemons ordenados
     }
 
 
     return (
         <>
-            {pokemons && pokemons.map((poke, index) => {
-                return (
-                    <CardContainer key={index} >
-                        <DivImage
-                            src={poke && poke.sprites.front_default}
-                            alt={poke.name}
-                        />
-                        <p>{poke.name}</p>
-                        <div>
-                            <button onClick={() => addToCart(poke)}>Adicionar á Pokedex</button>
-                            <button onClick={() => onClickDetails(navigate, poke.name, poke.id)}>Ver Detalhes</button>
-                        </div>
-                    </CardContainer>
-                )
-            })}
+            {/* {pokemons && pokemons.map((poke,index) => {
+                return (  ~como fiz o map na HomePage, aqui não precisa~*/}
+            <CardContainer>
+                <DivImage
+                    src={poke && poke.sprites.front_default}
+                    alt={poke.name}
+                />
+                <p>{poke.name}</p>
+                <div>
+                    <button onClick={() => addToPokedex(poke, indexPoke)}>Adicionar à Pokedex</button>
+                    <button onClick={() => onClickDetails(navigate, poke.name, poke.id)}>Ver Detalhes</button>
+                </div>
+            </CardContainer>
+            {/* )
+            })} */}
         </>
     );
 }

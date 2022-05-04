@@ -19,7 +19,9 @@ header{
     align-items: center;
     p{
         color:blue;
+        
     }
+    
 }
 main{
     flex-grow: 1;
