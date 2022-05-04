@@ -4,17 +4,18 @@ import { GlobalStateContext } from "../../global/GlobalStateContext";
 import axios from 'axios';
 import { Body } from '../../pages/PokemonsDetails/styled';
 import { goBack } from '../../routes/coordinator';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 export default function GetDetails(props) {
-    const { pokemons, setPokemons, pokedex, setPokedex, pokemonID, setPokemonID } = useContext(GlobalStateContext);
+    const params = useParams()
+    const { pokemons, setPokemons, pokedex, setPokedex} = useContext(GlobalStateContext);
     const [pokeDetails, setPokedetails] = useState([]);
     const [nomeMaiusculo, setNomeMaiusculo] = useState("")
     const navigate = useNavigate()
     const getDetails = () => {
         axios
-            .get(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
+            .get(`https://pokeapi.co/api/v2/pokemon/${params.name}`)
             .then((response) => {
                 setPokedetails(response.data);
                 setNomeMaiusculo((response.data.name.toUpperCase()));
@@ -25,7 +26,7 @@ export default function GetDetails(props) {
 
     useEffect(() => {
         getDetails()
-    }, [])
+    }, [navigate])
 
 
     return (
