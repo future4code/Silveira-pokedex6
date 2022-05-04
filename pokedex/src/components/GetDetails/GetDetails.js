@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MainGrid, DivPhoto, DivStat, DivTypeMoves, FrontContainer, BackContainer, Type, DivMoves, H1Stats, Stats, Moves, ButtonHeader } from './styled'
-import { GlobalStateContext } from "../../global/GlobalStateContext";
+// import { GlobalStateContext } from "../../global/GlobalStateContext";
 import axios from 'axios';
 import { Body } from '../../pages/PokemonsDetails/styled';
 import { goBack } from '../../routes/coordinator';
@@ -9,7 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 export default function GetDetails(props) {
     const params = useParams()
-    const { pokemons, setPokemons, pokedex, setPokedex} = useContext(GlobalStateContext);
+    // const { pokemons, setPokemons, pokedex, setPokedex} = useContext(GlobalStateContext);
     const [pokeDetails, setPokedetails] = useState([]);
     const [nomeMaiusculo, setNomeMaiusculo] = useState("")
     const navigate = useNavigate()
@@ -26,7 +26,7 @@ export default function GetDetails(props) {
 
     useEffect(() => {
         getDetails()
-    }, [navigate])
+    })
 
 
     return (
@@ -34,7 +34,7 @@ export default function GetDetails(props) {
             <header>
                 <ButtonHeader onClick={() => goBack(navigate)}>Voltar</ButtonHeader>
                 <p><b>{nomeMaiusculo}</b></p>
-                <ButtonHeader>Adicionar/Remover da Podedex</ButtonHeader>
+                <ButtonHeader>Adicionar/Remover da Pokedex</ButtonHeader>
             </header>
 
             <MainGrid>
@@ -42,10 +42,10 @@ export default function GetDetails(props) {
                     <>
                         <DivPhoto>
                             <FrontContainer>
-                                <img src={pokeDetails.sprites.front_default} />
+                                <img src={pokeDetails.sprites.front_default} alt={pokeDetails.name} />
                             </FrontContainer>
                             <BackContainer>
-                                <img src={pokeDetails.sprites.back_default} />
+                                <img src={pokeDetails.sprites.back_default} alt={pokeDetails.name} />
                             </BackContainer>
                         </DivPhoto>
                         <DivStat>
