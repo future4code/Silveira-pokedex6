@@ -1,7 +1,7 @@
 import { HeaderPokedex, ButtonBack, ContainerCards, Container } from "./styled"
-import PokeCard from "../../components/PokeCard/PokeCard"
 import { goBack } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
+import PokedexCard from "../../components/PokedexCard/PokedexCard";
 
 const PokedexPage = () => {
   const navigate = useNavigate()
@@ -13,7 +13,7 @@ const PokedexPage = () => {
         <h2>Pokedex</h2>
       </HeaderPokedex>
       <ContainerCards>
-        <PokeCard />
+        <PokedexCard />
       </ContainerCards>
     </>
   );
