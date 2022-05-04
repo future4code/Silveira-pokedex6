@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { MainGrid, DivPhoto, DivStat, DivTypeMoves, FrontContainer, BackContainer, Type, DivMoves, H1Stats, Stats, Moves, ButtonHeader } from './styled'
-// import { GlobalStateContext } from "../../global/GlobalStateContext";
+import { GlobalStateContext } from "../../global/GlobalStateContext";
 import axios from 'axios';
 import { Body } from '../../pages/PokemonsDetails/styled';
-import { goBack } from '../../routes/coordinator';
+import { goBack, goToPokedex } from '../../routes/coordinator';
 import { useNavigate, useParams } from 'react-router-dom';
+;
 
 
 export default function GetDetails(props) {
     const params = useParams()
-    // const { pokemons, setPokemons, pokedex, setPokedex} = useContext(GlobalStateContext);
+    const { pokemons, setPokemons, pokedex, setPokedex} = useContext(GlobalStateContext);
     const [pokeDetails, setPokedetails] = useState([]);
     const [nomeMaiusculo, setNomeMaiusculo] = useState("")
     const navigate = useNavigate()
@@ -28,13 +29,31 @@ export default function GetDetails(props) {
         getDetails()
     })
 
+    const addToCart = (item) => {
+        const index = pokedex.findIndex((i) => i.id === item.id);
+        
+        const newPokemon = { ...item };
+        const NewPokedex = [...pokedex];
+        const NewHome = [...pokemons]
+        
+        if (index === -1) {
+            NewPokedex.push(newPokemon);
+
+            NewHome.splice(newPokemon[index], 1);
+
+        }
+        setPokemons(NewHome)
+        setPokedex(NewPokedex)
+    }
+
+
 
     return (
         <Body>
             <header>
                 <ButtonHeader onClick={() => goBack(navigate)}>Voltar</ButtonHeader>
                 <p><b>{nomeMaiusculo}</b></p>
-                <ButtonHeader>Adicionar/Remover da Pokedex</ButtonHeader>
+                <ButtonHeader onClick={() => goToPokedex(navigate) }>Ir para Pokedex</ButtonHeader>
             </header>
 
             <MainGrid>

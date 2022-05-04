@@ -6,19 +6,48 @@ import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 
 const PokeCard = (props) => {
-    const { pokemons, setPokemons, pokedex, setPokedex, pokemonID, setPokemonID} = useContext(GlobalStateContext);
+    const { pokemons, setPokemons, pokedex, setPokedex, pokemonID, setPokemonID } = useContext(GlobalStateContext);
 
     const navigate = useNavigate()
-     
-    const onClickDetails = (navigate, name, id) =>{
+
+    const onClickDetails = (navigate, name, id) => {
         goToPokemonsDetails(navigate, name)
         setPokemonID(id)
+    }
+
+    const addToCart = (item) => {
+        const index = pokedex.findIndex((i) => i.id === item.id);
+
+        const newPokemonsList = [...pokemons]
+        newPokemonsList.splice(item, 1);
+
+        const NewPodexList = [...pokedex,item];
+
+
+
+        // const NewPokedex = [...pokedex];
+       
+        // if (index === -1) {
+        //     NewPokedex.push(newPokemon);
+        //     NewHome.splice(newPokemon[index], 1);
+        // }
+        // // const orderedList = NewHome.sort((a,b) => {
+        // //     return a.id - b.id;
+        // // });
+
+        // const orderedListPokedex = NewPokedex.sort((a,b) => {
+        //     return a.id - b.id;
+        // });    
+
+
+        setPokemons(newPokemonsList)
+        setPokedex(NewPodexList)
     }
 
 
     return (
         <>
-            {pokemons && pokemons.map((poke,index) => {
+            {pokemons && pokemons.map((poke, index) => {
                 return (
                     <CardContainer key={index} >
                         <DivImage
@@ -27,7 +56,7 @@ const PokeCard = (props) => {
                         />
                         <p>{poke.name}</p>
                         <div>
-                            <button>Remover da Pokedex</button>
+                            <button onClick={() => addToCart(poke)}>Adicionar á Pokedex</button>
                             <button onClick={() => onClickDetails(navigate, poke.name, poke.id)}>Ver Detalhes</button>
                         </div>
                     </CardContainer>
