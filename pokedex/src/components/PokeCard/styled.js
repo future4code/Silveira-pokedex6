@@ -1,7 +1,5 @@
 import styled from "styled-components"
 
-
-
 export const CardContainer = styled.div`
 display: flex;
 align-items: center;
@@ -13,7 +11,6 @@ flex-direction: column;
 background-color: green;
 border: 1px black solid;
 border-radius: 8px;
-
 ` 
 
 export const DivImage = styled.img`
