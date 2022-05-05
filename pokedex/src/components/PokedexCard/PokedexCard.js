@@ -1,4 +1,4 @@
-import { CardContainer, DivImage, ButtonsPokedex, DivButtons, Name } from "./styled"
+import { CardContainer, DivImage, ButtonsPokedex, DivButtons, Name, MainContainer } from "./styled"
 import { useNavigate } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { goToPokemonsDetails } from '../../routes/coordinator'
