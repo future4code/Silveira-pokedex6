@@ -1,4 +1,4 @@
-import { CardContainer, DivImage } from "./styled"
+import { CardContainer, DivImage, ButtonsPokedex, DivButtons, Name } from "./styled"
 import { useNavigate } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { goToPokemonsDetails } from '../../routes/coordinator'
@@ -23,17 +23,19 @@ const PokedexCard = (props) => {
 
         NewHome.push(NewPokemon);
         }    
-        // const orderedList = NewHome.sort((a,b) => {
-        //     return a.id - b.id;
-        // });
+        const orderedList = NewHome.sort((a,b) => {
+            const ordem = a.id - b.id;
+            return ordem
+        });
 
-        // const orderedListPokedex = NewPokedex.sort((a,b) => {
-        //     return a.id - b.id;
-        // });    
+        const orderedListPokedex = NewPokedex.sort((a,b) => {
+            const ordem = a.id - b.id;
+            return ordem
+        });    
 
 
-        setPokedex(NewPokedex)
-        setPokemons(NewHome)
+        setPokedex(orderedListPokedex)
+        setPokemons(orderedList)
     }
 
 
@@ -46,11 +48,11 @@ const PokedexCard = (props) => {
                             src={poke && poke.sprites.front_default}
                             alt={poke.name}
                         />
-                        <p>{poke.name}</p>
-                        <div>
-                            <button onClick={() => removeToCart(poke)}>Remover da Pokedex</button>
-                            <button onClick={() => goToPokemonsDetails(navigate, poke.name, poke.id)}>Ver Detalhes</button>
-                        </div>
+                        <Name>{poke.name}</Name>
+                        <DivButtons>
+                            <ButtonsPokedex onClick={() => removeToCart(poke)}>Remover da Pokedex</ButtonsPokedex>
+                            <ButtonsPokedex onClick={() => goToPokemonsDetails(navigate, poke.name, poke.id)}>Ver Detalhes</ButtonsPokedex>
+                        </DivButtons>
                     </CardContainer>
                 )
             })}
