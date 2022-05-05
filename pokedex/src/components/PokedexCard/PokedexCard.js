@@ -23,17 +23,19 @@ const PokedexCard = (props) => {
 
         NewHome.push(NewPokemon);
         }    
-        // const orderedList = NewHome.sort((a,b) => {
-        //     return a.id - b.id;
-        // });
+        const orderedList = NewHome.sort((a,b) => {
+            const ordem = a.id - b.id;
+            return ordem
+        });
 
-        // const orderedListPokedex = NewPokedex.sort((a,b) => {
-        //     return a.id - b.id;
-        // });    
+        const orderedListPokedex = NewPokedex.sort((a,b) => {
+            const ordem = a.id - b.id;
+            return ordem
+        });    
 
 
-        setPokedex(NewPokedex)
-        setPokemons(NewHome)
+        setPokedex(orderedListPokedex)
+        setPokemons(orderedList)
     }
 
 
