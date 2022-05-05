@@ -30,14 +30,8 @@ export const ButtonBack = styled.button`
 `
 export const ContainerCards = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, 20em);
-    justify-content: space-around;
-    grid-gap: 0.5em;
-    background-color: #f8e71c;
-    min-width: 100vw;
-`
-export const Footer = styled.footer`
-    min-height: 100vh;
-    min-width: 100vw;
-    background-color: #f8e71c;
+    grid-template-columns: repeat(auto-fit, 25em);
+    justify-content: center;
+    grid-gap: 1em;
+    
 `

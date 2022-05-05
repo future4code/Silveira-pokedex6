@@ -4,6 +4,9 @@ import PokeCard from "../../components/PokeCard/PokeCard";
 import { useNavigate } from "react-router-dom";
 import { GlobalStateContext } from "../../global/GlobalStateContext";
 import { goToPokedex } from "../../routes/coordinator";
+import ImgPokemon from "../../img/pokemon.png"
+import Img from "../../img/pokemon-logo-0.png"
+import { PlaceImg, Button, Placebutton } from "./styled";
 
 
 const HomePage = () => {
@@ -20,7 +23,13 @@ const HomePage = () => {
 
   return (
     <div>
-      <Header> <button onClick={() => goToPokedex(navigate)}> Ir para Pokedex</button> <h1>HOME</h1>POKEMONS</Header>
+      <Header> 
+        <Placebutton>
+        <Button onClick={() => goToPokedex(navigate)}> Ir para Pokedex</Button>
+        </Placebutton>
+       <PlaceImg src={Img}></PlaceImg>
+      
+      </Header>
       <ContainerCards>
         {pokeMap}
         {/* <PokeCard /> */}

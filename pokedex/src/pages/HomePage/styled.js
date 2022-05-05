@@ -1,15 +1,27 @@
 import styled from "styled-components"
 
 
-
+export const Button = styled.button`
+border-radius: 20px;
+background-color: #1273DE;
+color: white;
+font-family: 'Bebas Neue', cursive;
+width: 120px;
+height: 40px;
+font-size: large;
+`
+export const Placebutton = styled.div`
+margin-top: 0 auto;
+`
 
 export const Header= styled.header`
-background-color: #000080;
-color: beige;
+background-color: #38abed;
+color: yellow;
 font-family: 'Bebas Neue', cursive;
 font-size: larger;
-margin-left: 481px;
-width: 2000px;
+margin: 0 auto;
+height: 125px;
+
 `
 export const Container = styled.div`
 height: 900px;
@@ -20,18 +32,19 @@ font-family: 'Bebas Neue', cursive;
 display: flex;
 justify-content: center;
 flex-direction: column;
+
 margin: 0 auto;
 `
 export const Footer = styled.footer`
-background-color: #000080;
+background-color: #38abed;
 margin-top: 0px;
-color: beige;
+color: white;
 height: 80px;
 font-family: 'Bebas Neue', cursive;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
-margin-left: -1380px;
+
 `
 
 export const ContainerCards = styled.div`
@@ -39,4 +52,17 @@ export const ContainerCards = styled.div`
     grid-template-columns: repeat(auto-fit, 25em);
     justify-content: center;
     grid-gap: 1em;
+    width: 0 auto;
+   min-height: 900px;
+   background-color: yellow;
+    
+`
+export const PlaceImg = styled.img`
+height: 220px;
+width: 250px;
+margin: 0 auto;
+justify-content: center;
+align-items: center;
+margin-left: 550px;
+margin-top: -70px;
 `

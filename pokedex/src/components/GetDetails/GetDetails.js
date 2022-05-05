@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { MainGrid, DivPhoto, DivStat, DivTypeMoves, FrontContainer, BackContainer, Type, DivMoves, H1Stats, Stats, Moves, ButtonHeader } from './styled'
+import { MainGrid, DivPhoto, DivStat, DivTypeMoves, FrontContainer, BackContainer, Type, DivMoves, H1Stats, Stats, Moves, ButtonHeader, Header } from './styled'
 import { GlobalStateContext } from "../../global/GlobalStateContext";
 import axios from 'axios';
 import { Body } from '../../pages/PokemonsDetails/styled';
@@ -50,11 +50,11 @@ export default function GetDetails(props) {
 
     return (
         <Body>
-            <header>
+            <Header>
                 <ButtonHeader onClick={() => goBack(navigate)}>Voltar</ButtonHeader>
                 <p><b>{nomeMaiusculo}</b></p>
                 <ButtonHeader onClick={() => goToPokedex(navigate) }>Ir para Pokedex</ButtonHeader>
-            </header>
+            </Header>
 
             <MainGrid>
                 {pokeDetails && pokeDetails.sprites && (
