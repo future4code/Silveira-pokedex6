@@ -1,4 +1,4 @@
-import { CardContainer, DivImage, Button } from "./styled"
+import { CardContainer, DivImage, Button, DivButton } from "./styled"
 import { useNavigate } from "react-router-dom";
 import React, { useContext } from "react";
 import { goToPokemonsDetails } from '../../routes/coordinator'
@@ -49,11 +49,11 @@ const PokeCard = (props) => {
                     src={poke && poke.sprites.front_default}
                     alt={poke.name}
                 />
-                <p>{poke.name}</p>
-                <div>
+                <p><b>{poke.name.toUpperCase()}</b></p>
+                <DivButton>
                     <Button onClick={() => addToPokedex(poke, indexPoke)}>Adicionar à Pokedex</Button>
                     <Button onClick={() => onClickDetails(navigate, poke.name, poke.id)}>Ver Detalhes</Button>
-                </div>
+                </DivButton>
             </CardContainer>
             {/* )
             })} */}

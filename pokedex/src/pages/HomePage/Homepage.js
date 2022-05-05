@@ -25,7 +25,7 @@ const HomePage = () => {
     <div>
       <Header> 
         <Placebutton>
-        <Button onClick={() => goToPokedex(navigate)}> Ir para Pokedex</Button>
+        <Button onClick={() => goToPokedex(navigate)}>Pokedex</Button>
         </Placebutton>
        <PlaceImg src={Img}></PlaceImg>
       
@@ -34,7 +34,7 @@ const HomePage = () => {
         {pokeMap}
         {/* <PokeCard /> */}
       </ContainerCards>
-      <Footer>POKEMONS</Footer>
+      <Footer><p>POKÉMONS</p></Footer>
     </div>
   );
 }

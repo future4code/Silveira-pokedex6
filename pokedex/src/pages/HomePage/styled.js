@@ -9,6 +9,19 @@ font-family: 'Bebas Neue', cursive;
 width: 120px;
 height: 40px;
 font-size: large;
+margin: 5px;
+cursor: pointer;
+:hover{
+    background-color: white;
+    color: #1273DE;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition:all 0.3s ease;
+}
+:active{
+    color:blue;
+}
 `
 export const Placebutton = styled.div`
 margin-top: 0 auto;
@@ -20,8 +33,10 @@ color: yellow;
 font-family: 'Bebas Neue', cursive;
 font-size: larger;
 margin: 0 auto;
-height: 125px;
-
+height: 105px;
+display: flex;
+justify-content: center;
+align-items: center;
 `
 export const Container = styled.div`
 height: 900px;
@@ -39,12 +54,12 @@ export const Footer = styled.footer`
 background-color: #38abed;
 margin-top: 0px;
 color: white;
-height: 80px;
+height: 30px;
 font-family: 'Bebas Neue', cursive;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
-
+padding: 3px;
 `
 
 export const ContainerCards = styled.div`
@@ -55,14 +70,13 @@ export const ContainerCards = styled.div`
     width: 0 auto;
    min-height: 900px;
    background-color: yellow;
-    
+    align-items: center;
 `
 export const PlaceImg = styled.img`
-height: 220px;
-width: 250px;
+height: 15rem;
+width: 15rem;
 margin: 0 auto;
-justify-content: center;
-align-items: center;
-margin-left: 550px;
-margin-top: -70px;
+
+/* margin-left: 30rem;
+margin-top: -5rem; */
 `

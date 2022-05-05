@@ -11,6 +11,7 @@ flex-direction: column;
 background-color: #38abed;
 border: 1px black solid;
 border-radius: 8px;
+
 ` 
 
 export const DivImage = styled.img`
@@ -30,6 +31,8 @@ export const ButtonsPokedex = styled.button`
     border-radius: 15px;
     border: 1px solid black;
     font-family: cursive;
+    cursor: pointer;
+    margin: 3px;
 `
 export const DivButtons = styled.div`
      display: flex;

@@ -3,7 +3,7 @@ import { MainGrid, DivPhoto, DivStat, DivTypeMoves, FrontContainer, BackContaine
 import { GlobalStateContext } from "../../global/GlobalStateContext";
 import axios from 'axios';
 import { Body } from '../../pages/PokemonsDetails/styled';
-import { goBack, goToPokedex } from '../../routes/coordinator';
+import { goBack, goToHome, goToPokedex } from '../../routes/coordinator';
 import { useNavigate, useParams } from 'react-router-dom';
 ;
 
@@ -51,9 +51,12 @@ export default function GetDetails(props) {
     return (
         <Body>
             <Header>
-                <ButtonHeader onClick={() => goBack(navigate)}>Voltar</ButtonHeader>
+            <span>
+        <ButtonHeader onClick={() => goBack(navigate)} >Voltar</ButtonHeader>
+        <ButtonHeader onClick={() => goToHome(navigate)} >Home</ButtonHeader>
+        </span>
                 <p><b>{nomeMaiusculo}</b></p>
-                <ButtonHeader onClick={() => goToPokedex(navigate) }>Ir para Pokedex</ButtonHeader>
+                <ButtonHeader onClick={() => goToPokedex(navigate) }>Pokedex</ButtonHeader>
             </Header>
 
             <MainGrid>

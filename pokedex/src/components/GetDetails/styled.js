@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 
 export const ButtonHeader = styled.button`
-margin: 10px;
-border-style: hidden;
-height: 30px;
-background-color: #38abed;
+border-radius: 20px;
+background-color: #1273DE;
 color: white;
 font-family: 'Bebas Neue', cursive;
-border-radius: 5px;
-padding: 4px;
+width: 100px;
+height: 40px;
+font-size: medium;
+margin: 10px;
 cursor: pointer;
 :hover{
-    color: #38abed;
-    background-color: yellow;
+    background-color: white;
+    color: #1273DE;
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.1);
@@ -26,9 +26,12 @@ export const MainGrid = styled.div`
 display: grid;
 grid-template-columns: 25rem 25rem 1fr ;
 margin: 20px;
-background-color:yellow;
 color: #38abed;
 font-family: 'Bebas Neue', cursive;
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+display: flex;
+flex-direction: column;
+}
 `
 export const DivPhoto = styled.div`
 grid-column: 1;
@@ -40,7 +43,9 @@ height: 30rem;
 font-family: 'Bebas Neue', cursive;
 ` 
 export const FrontContainer = styled.div`
-border: 1px solid yellow;
+/* border: 1px solid yellow; */
+border-radius: 5px;
+background-color: white;
 font-family: 'Bebas Neue', cursive;
 margin-bottom: 20px;
 height: 15rem;
@@ -48,6 +53,7 @@ display: flex;
 box-shadow: 5px 5px 5px 5px  #38abed;
 justify-content: center;
 align-items: center;
+
 img{
     object-fit: fill;
     height: 10rem;
@@ -63,7 +69,9 @@ img{
 export const BackContainer = styled.div`
 box-shadow: 5px 5px 5px 5px  #38abed;
 font-family: 'Bebas Neue', cursive;
-border: 1px solid yellow;
+/* border: 1px solid yellow; */
+border-radius: 5px;
+background-color: white;
 display: flex;
 height: 15rem;
 justify-content: center;
@@ -82,7 +90,7 @@ img{
 `
 
 export const DivStat = styled.div`
-border: 1px solid yellow;
+/* border: 1px solid yellow; */
 font-family: 'Bebas Neue', cursive;
 margin: 20px;
 height: 30rem;
@@ -91,6 +99,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 box-shadow: 5px 5px 5px 5px  #38abed;
+border-radius: 5px;
+background-color: white;
 ` 
 export const H1Stats = styled.div`
 display: flex;
@@ -124,7 +134,7 @@ flex-direction: column;
 font-family: 'Bebas Neue', cursive;
 ` 
 export const Type = styled.div`
-border: 1px solid yellow;
+/* border: 1px solid yellow; */
 margin-bottom: 20px;
 height: 5rem;
 display: flex;
@@ -132,6 +142,8 @@ justify-content: space-around;
 box-shadow: 5px 5px 5px 5px  #38abed;
 align-items: center;
 font-family: 'Bebas Neue', cursive;
+border-radius: 5px;
+background-color: white;
 p{
     :hover{
         -webkit-transform: scale(1.3);
@@ -142,7 +154,9 @@ p{
 }
 `
 export const DivMoves = styled.div`
-border: 1px solid yellow;
+/* border: 1px solid yellow; */
+border-radius: 5px;
+background-color: white;
 font-family: 'Bebas Neue', cursive;
 flex-grow: 1;
 display: flex;
@@ -177,6 +191,17 @@ export const Header = styled.header`
 font-family: 'Bebas Neue', cursive;
 background-color: #38abed;
 color: yellow;
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+span{
+    display: flex;
+    justify-content: space-between;
+    button{
+        padding: 0;
+        margin:0;
+        width: 70px;
+    }
+}
+}
 
 `
 
