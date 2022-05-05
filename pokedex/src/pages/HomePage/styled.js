@@ -8,7 +8,7 @@ background-color: #000080;
 color: beige;
 font-family: 'Bebas Neue', cursive;
 font-size: larger;
-margin-left: 481px;
+margin: 0 auto;
 width: 2000px;
 `
 export const Container = styled.div`

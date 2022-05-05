@@ -25,4 +25,5 @@ export const ContainerCards = styled.div`
     grid-template-columns: repeat(auto-fit, 25em);
     justify-content: center;
     grid-gap: 1em;
+    
 `
