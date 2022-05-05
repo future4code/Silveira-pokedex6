@@ -3,6 +3,7 @@ import { goBack } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 import PokedexCard from "../../components/PokedexCard/PokedexCard";
 
+
 const PokedexPage = () => {
   const navigate = useNavigate()
   return (
@@ -15,7 +16,7 @@ const PokedexPage = () => {
       <ContainerCards>
         <PokedexCard />
       </ContainerCards>
-      <Footer/>
+      {/* <Footer/> */}
      
     </>
   );

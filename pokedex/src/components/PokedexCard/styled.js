@@ -17,7 +17,7 @@ export const DivImage = styled.img`
     width: 10em;
     height: 10em;
     padding: 0.5em;
-    background-color: #f8e71c;  
+    background-color: white;  
     border-radius  : 8px;          
 `
 export const ButtonsPokedex = styled.button`

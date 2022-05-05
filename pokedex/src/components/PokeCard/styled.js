@@ -8,9 +8,11 @@ width: 20em;
 height: 15em;
 padding: 5px;
 flex-direction: column;
-background-color: green;
-border: 1px black solid;
+background-color: #38abed;
+color:white;
+border: 1px white solid;
 border-radius: 8px;
+font-family: 'Bebas Neue', cursive;
 ` 
 
 export const DivImage = styled.img`
@@ -19,4 +21,13 @@ export const DivImage = styled.img`
     padding: 0.5em;
     background-color: white;    
           
+`
+export const Button = styled.button`
+border-radius: 20px;
+background-color: #1273DE;
+color: white;
+font-family: 'Bebas Neue', cursive;
+width: 120px;
+height: 40px;
+/* font-size: large; */
 `

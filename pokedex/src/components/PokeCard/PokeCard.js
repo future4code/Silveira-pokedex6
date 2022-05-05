@@ -1,4 +1,4 @@
-import { CardContainer, DivImage } from "./styled"
+import { CardContainer, DivImage, Button } from "./styled"
 import { useNavigate } from "react-router-dom";
 import React, { useContext } from "react";
 import { goToPokemonsDetails } from '../../routes/coordinator'
@@ -51,8 +51,8 @@ const PokeCard = (props) => {
                 />
                 <p>{poke.name}</p>
                 <div>
-                    <button onClick={() => addToPokedex(poke, indexPoke)}>Adicionar à Pokedex</button>
-                    <button onClick={() => onClickDetails(navigate, poke.name, poke.id)}>Ver Detalhes</button>
+                    <Button onClick={() => addToPokedex(poke, indexPoke)}>Adicionar à Pokedex</Button>
+                    <Button onClick={() => onClickDetails(navigate, poke.name, poke.id)}>Ver Detalhes</Button>
                 </div>
             </CardContainer>
             {/* )
