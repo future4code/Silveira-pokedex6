@@ -6,7 +6,7 @@ Pokedex6
 
 - renderização dos 20 primeiros Pokémons na HomePage, em ordem de id;
 - botão e função de adicionar à Pokedex, removendo da HomePage;
-- botão de ver detalhes de cada Pokémon;
+- botão e página de ver detalhes de cada Pokémon;
 - botão de ver a Pokedex;
 - renderização dos Pokémons da Pokedex;
 - botão e função de remover Pokémons da Pokedex retornando-os para a HomePage em ordem de id;
