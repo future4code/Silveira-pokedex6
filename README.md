@@ -1,16 +1,21 @@
-# POKEDEX
+# Silveira-pokedex6
+Pokedex6
 
-Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+*O que funciona*:
+-
 
-Link do Surge: www.link.com.br
+- renderização dos 20 primeiros Pokémons na HomePage, em ordem de id;
+- botão e função de adicionar à Pokedex, removendo da HomePage;
+- botão e página de ver detalhes de cada Pokémon;
+- botão de ver a Pokedex;
+- renderização dos Pokémons da Pokedex;
+- botão e função de remover Pokémons da Pokedex retornando-os para a HomePage em ordem de id;
+- animações ao passar o mouse em alguns objetos
 
-O que funciona:
-- Item 1
-- Item 2
+*O que não funciona*:
+-
 
-O que não funciona: 
-- Item 3
-- Item 4
+Link Surge:
+-
+https://shy-harbor.surge.sh/
+
